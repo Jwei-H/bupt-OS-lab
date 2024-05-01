@@ -1,7 +1,11 @@
 #pragma once
 #include "Process.h"
 
-void init_process();
-void add_watingtime(int time);
-void add_roundtime(int time);
-void add_responsetime(int time);
+void init_process(Process* process);
+void update_watingtime(Process* process,int time);
+void update_roundtime(Process* process,int time);
+void update_responsetime(Process* process,int time);
+void start_operate(Process* process);
+bool is_finished(Process* process);
+void add_vruntime(Process* process, int time);
+void des_vruntime(Process* process, int time);

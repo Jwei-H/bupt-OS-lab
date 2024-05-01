@@ -1,3 +1,4 @@
+#pragma once
 // 定义进程状态
 enum ProcessState {
     READY,
@@ -15,5 +16,6 @@ struct Process {
     int waitingTime;               // 等待时间
     int turnaroundTime;            // 周转时间
     int responseTime;              // 响应时间
+    int vruntime;                  // 虚拟运行时间（用于CFS算法）
     ProcessState state;            // 进程状态
 };
