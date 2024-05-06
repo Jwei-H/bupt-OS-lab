@@ -2,7 +2,7 @@
 #include "Process.h"
 
 void init_process(Process* process);
-void update_watingtime(Process* process,int time);
+void update_waitingtime(Process* process,int time);
 void update_roundtime(Process* process,int time);
 void update_responsetime(Process* process,int time);
 void start_operate(Process* process);

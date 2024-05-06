@@ -33,7 +33,7 @@ void CFS(std::queue<Process> process_queue, int time_slice){
         }
         Process* process = pq.top();
         // 记录等待时间
-        update_watingtime(process, current_time - process->arrivalTime);
+        update_waitingtime(process, current_time - process->arrivalTime);
         // 记录响应时间
         if(process->responseTime == 0){
             update_responsetime(process, current_time - process->arrivalTime);

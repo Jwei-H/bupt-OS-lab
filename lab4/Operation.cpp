@@ -18,7 +18,7 @@ void init_process(Process *process)
     process->arrivalTime = arrivalTime ;//保证到达时间递增
 }
 
-void update_watingtime(Process *process, int time)
+void update_waitingtime(Process *process, int time)
 {
     process->waitingTime += time;
 }
