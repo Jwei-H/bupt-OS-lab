@@ -4,21 +4,23 @@
 #include <queue>
 #include "LFR.h"
 #include "OPT.h"
+#include "Clock.h"
 #include <iomanip>
 
 std::queue<int> generate_queue();
 
-int main()
-{
+int main(){
     std::queue<int> q = generate_queue();
-    std::cout << "size  " << "hit_count_LFR  " << "hit_count_OPT" << std::endl;
+    
+    std::cout << "hit_count_LFR  " << "hit_count_OPT" << "size  " << "hit_count_CLOCK"<< std::endl;
     for (int size = 4; size < 32; size++)
     {
         std::cout << size;
         if (size < 10)
             std::cout << " ";
         std::cout << std::setw(12) << std::setprecision(4) << std::showpoint << (double)LFR(q, size) / 3.2 << "%"
-                  << std::setw(12) << (double)OPT(q, size) / 3.2 << "%" << std::endl;
+        << std::setw(12) << (double)OPT(q, size) / 3.2 << "%"
+        << std::setw(12) << (double)Clock(q, size) / 3.2 << "%" << std::endl;
     }
 
     return 0;
