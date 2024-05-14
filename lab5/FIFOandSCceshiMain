@@ -1,0 +1,41 @@
+#include <iostream>
+#include <queue>
+#include "FIFO.h"
+#include "SecondChance.h"
+
+int main() 
+{
+    std::queue<int> q; // 创建存储页面访问序列的队列
+
+    // 填充页面访问序列，这里使用示例数据填充队列
+    for (int i = 0; i < 10; ++i) 
+    {
+        q.push(i); // 假设页面号从0到9
+    }
+
+    // 测试FIFO算法
+    std::cout << "Testing FIFO algorithm:" << std::endl;
+    double fifo_hit_rate = 0;
+    int fifo_hits = FIFO(q, 3, fifo_hit_rate); // 使用FIFO算法处理页面访问序列，假设内存大小为3
+    std::cout << "Number of hits: " << fifo_hits << std::endl;
+    std::cout << "Hit rate: " << fifo_hit_rate << "%" << std::endl;
+
+    // 重新填充页面访问序列
+    while (!q.empty()) 
+    {
+        q.pop();
+    }
+    for (int i = 0; i < 10; ++i) 
+    {
+        q.push(i); // 假设页面号从0到9
+    }
+
+    // 测试Second Chance算法
+    std::cout << "\nTesting Second Chance algorithm:" << std::endl;
+    double second_chance_hit_rate = 0;
+    int second_chance_hits = SecondChance(q, 3, second_chance_hit_rate); // 使用Second Chance算法处理页面访问序列，假设内存大小为3
+    std::cout << "Number of hits: " << second_chance_hits << std::endl;
+    std::cout << "Hit rate: " << second_chance_hit_rate << "%" << std::endl;
+
+    return 0;
+}
