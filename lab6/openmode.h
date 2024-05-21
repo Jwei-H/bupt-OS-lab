@@ -3,8 +3,6 @@
 
 #include "base.h"
 
-int openMode = O_RDWR | O_CREAT; // 默认打开模式为读写模式
-
 // SetOpenMode 函数用于设置文件的打开模式
 void SetOpenMode() 
 {

@@ -12,11 +12,11 @@ int main()
     while (true) 
     {
         cout << "\n请选择您的选项\n";
-        cout << "1. 设置文件打开模式\n";
-        cout << "2. 新建（不存在）或者打开文件\n";
+        cout << "1. 新建（不存在）或者打开文件\n";
+        cout << "2. 设置文件打开模式\n";
         cout << "3. 读文件\n";
         cout << "4. 写文件\n";
-        cout << "5. 给文件权限修改\n";
+        cout << "5. 修改文件权限\n";
         cout << "6. 查看文件权限\n";
         cout << "7. 查看文件路径\n";
         cout << "8. 关闭文件\n";
@@ -25,10 +25,10 @@ int main()
         switch (choice) 
         {
             case 1:
-                SetOpenMode();
+                CreateOpenFileWithMode();
                 break;
             case 2:
-                CreateOpenFileWithMode();
+                SetOpenMode();
                 break;
             case 3:
                 ReadFile();

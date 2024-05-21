@@ -18,5 +18,5 @@ string filename;
 int fd;
 bool opened = false;
 char* pargv[4] = { "ls", "-l", nullptr, nullptr };
-
+int openMode = O_RDWR | O_CREAT; // 默认打开模式为读写模式
 #endif //BUPT_OS_LAB_BASE_H
