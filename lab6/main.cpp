@@ -4,6 +4,7 @@
 #include "readwrite.h"
 #include "viewroad.h"
 #include "openmode.h"
+#include "rename.h"
 
 int main() 
 {
@@ -19,8 +20,9 @@ int main()
         cout << "5. 修改文件权限\n";
         cout << "6. 查看文件权限\n";
         cout << "7. 查看文件路径\n";
-        cout << "8. 关闭文件\n";
-        cout << "9. 退出程序\n";
+        cout << "8. 重命名文件\n";
+        cout << "9. 关闭文件\n";
+        cout << "10. 退出程序\n";
         cin >> choice;
         switch (choice) 
         {
@@ -46,9 +48,11 @@ int main()
                 ViewRoad();
                 break;
             case 8:
+                RenameFile();
+            case 9:
                 exit();
                 break;
-            case 9:
+            case 10:
                 if (opened) 
                 {
                     close(fd);
