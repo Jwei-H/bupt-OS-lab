@@ -14,8 +14,8 @@ void init_process(Process *process)
     process->burstTime = rand() % 10 + 1;
     process->priority = 0;
     static int arrivalTime = 0;
-    arrivalTime += rand() % 5 ;
     process->arrivalTime = arrivalTime ;//保证到达时间递增
+    arrivalTime += rand() % 2 ;
 }
 
 void update_waitingtime(Process *process, int time)

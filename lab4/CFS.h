@@ -1,6 +1,7 @@
 #pragma once
 #include "Process.h"
 #include "Operation.h"
+#include <memory>
 #include <queue>
 #include <iostream>
 
@@ -17,6 +18,21 @@ void CFS(std::queue<Process> process_queue, int time_slice){
     std::queue<std::shared_ptr<Process>> finished_queue;
     while(true){
         // 将到达时间小于等于当前时间的进程加入优先队列
+                while (!process_queue.empty() && process_queue.front().arrivalTime <= current_time)
+        {
+            std::shared_ptr<Process> process = std::make_shared<Process>(process_queue.front());
+            pq.push(process);
+            process_queue.pop();
+        }
+        if (pq.empty())
+        {
+            if (process_queue.empty())
+            {
+                break;
+            }
+            current_time = process_queue.front().arrivalTime;
+            continue;
+        }
         std::shared_ptr<Process> process = pq.top();
         // 记录等待时间
         update_waitingtime(process.get(), current_time - process->arrivalTime);

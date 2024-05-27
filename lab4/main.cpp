@@ -9,8 +9,8 @@ void test_HRRN();
 int main()
 {
     test_CFS();
-    // test_FCFS();
-    // test_HRRN();
+    test_FCFS();
+    test_HRRN();
 }
 
 void test_CFS()
@@ -22,7 +22,7 @@ void test_CFS()
         init_process(process.get());
         process_queue.push(*process);
     }
-    CFS(process_queue, 2);
+    CFS(process_queue, 4);
 }
 void test_FCFS()
 {
