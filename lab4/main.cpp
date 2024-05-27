@@ -22,7 +22,7 @@ void test_CFS()
         init_process(process.get());
         process_queue.push(*process);
     }
-    CFS(process_queue, 2);
+    CFS(process_queue, 4);
 }
 void test_FCFS()
 {
