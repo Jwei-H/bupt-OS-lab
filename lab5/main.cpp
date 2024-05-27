@@ -5,22 +5,33 @@
 #include "LFR.h"
 #include "OPT.h"
 #include "Clock.h"
+#include "FIFO.h"
+#include "SecondChance.h"
 #include <iomanip>
 
 std::queue<int> generate_queue();
 
-int main(){
+int main()
+{
     std::queue<int> q = generate_queue();
-    
-    std::cout << "hit_count_LFR  " << "hit_count_OPT" << "size  " << "hit_count_CLOCK"<< std::endl;
+
+    std::cout << "size  "
+              << "hit_rate_LFR  "
+              << "hit_rate_OPT  "
+              << "hit_rate_CLOCK  "
+              << "hit_rate_FIFO  "
+              << "hit_rate_SC" << std::endl;
     for (int size = 4; size < 32; size++)
     {
         std::cout << size;
         if (size < 10)
             std::cout << " ";
-        std::cout << std::setw(12) << std::setprecision(4) << std::showpoint << (double)LFR(q, size) / 3.2 << "%"
-        << std::setw(12) << (double)OPT(q, size) / 3.2 << "%"
-        << std::setw(12) << (double)Clock(q, size) / 3.2 << "%" << std::endl;
+        std::cout << std::setw(13) << std::setprecision(4) << std::showpoint << (double)LFR(q, size) / 3.2 << "%"
+                  << std::setw(13) << (double)OPT(q, size) / 3.2 << "%"
+                  << std::setw(13) << (double)Clock(q, size) / 3.2 << "%"
+                  << std::setw(13) << (double)FIFO(q, size) / 3.2 << "%"
+                  << std::setw(13) << (double)SecondChance(q, size) / 3.2 << "%"
+                  << std::endl;
     }
 
     return 0;
