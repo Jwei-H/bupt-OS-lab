@@ -33,7 +33,6 @@ int main()
                   << std::setw(13) << (double)SecondChance(q, size) / 3.2 << "%"
                   << std::endl;
     }
-
     return 0;
 }
 

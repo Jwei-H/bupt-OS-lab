@@ -1,0 +1,3 @@
+/home/han/CLionProjects/bupt-OS-lab/lab3/Han/OSLab3/cmake-build-debug/CMakeFiles/OSLab3.dir
+/home/han/CLionProjects/bupt-OS-lab/lab3/Han/OSLab3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/han/CLionProjects/bupt-OS-lab/lab3/Han/OSLab3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
