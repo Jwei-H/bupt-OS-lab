@@ -1,6 +1,7 @@
 #pragma once
 #include "Process.h"
 #include "Operation.h"
+#include <memory>
 #include <queue>
 #include <iostream>
 

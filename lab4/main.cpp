@@ -9,8 +9,8 @@ void test_HRRN();
 int main()
 {
     test_CFS();
-    // test_FCFS();
-    // test_HRRN();
+    test_FCFS();
+    test_HRRN();
 }
 
 void test_CFS()
