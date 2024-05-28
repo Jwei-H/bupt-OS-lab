@@ -12,8 +12,7 @@
 
 std::queue<int> generate_queue();
 
-int main()
-{
+int main() {
     std::queue<int> q = generate_queue();
 
     std::cout << "size  "
@@ -21,19 +20,22 @@ int main()
               << "hit_rate_OPT  "
               << "hit_rate_CLOCK  "
               << "hit_rate_FIFO  "
-              << "hit_rate_SC" << std::endl;
-    for (int size = 4; size < 32; size++)
-    {
+              << "hit_rate_SC  "
+              << "hit_rate_LRU" << std::endl;
+
+    for (int size = 4; size < 32; size++) {
         std::cout << size;
-        if (size < 10)
-            std::cout << " ";
-        std::cout << std::setw(13) << std::setprecision(4) << std::showpoint << (double)LFR(q, size) / 3.2 << "%"
-                  << std::setw(13) << (double)OPT(q, size) / 3.2 << "%"
-                  << std::setw(13) << (double)Clock(q, size) / 3.2 << "%"
-                  << std::setw(13) << (double)FIFO(q, size) / 3.2 << "%"
-                  << std::setw(13) << (double)SecondChance(q, size) / 3.2 << "%"
+        if (size < 10) std::cout << " ";
+        std::cout << std::setw(13) << std::setprecision(4) << std::showpoint 
+                  << (double)LFR(q, size) / 3.2 << "%"  // 假设LFR函数已定义
+                  << std::setw(13) << (double)OPT(q, size) / 3.2 << "%"  // 假设OPT函数已定义
+                  << std::setw(13) << (double)Clock(q, size) / 3.2 << "%"  // 假设Clock函数已定义
+                  << std::setw(13) << (double)FIFO(q, size) / 3.2 << "%"  // 假设FIFO函数已定义
+                  << std::setw(13) << (double)SecondChance(q, size) / 3.2 << "%"  // 假设SecondChance函数已定义
+                  << std::setw(13) << (double)LRU(q, size) / 3.2 << "%"  // LRU测试
                   << std::endl;
     }
+
     return 0;
 }
 
