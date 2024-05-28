@@ -6,6 +6,7 @@
 #include "OPT.h"
 #include "Clock.h"
 #include "FIFO.h"
+#include "LRU.h"
 #include "SecondChance.h"
 #include <iomanip>
 
