@@ -10,4 +10,6 @@ add_executable(
         viewMod.h
         updateMod.h
         base.h
+        encryption.h
+        encryption.cpp
 )

@@ -24,7 +24,7 @@ void sjf(myProcess processes[], int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
             if (processes[j].burst_time > processes[j + 1].burst_time) {
-                Process temp = processes[j];
+                myProcess temp = processes[j];
                 processes[j] = processes[j + 1];
                 processes[j + 1] = temp;
             }

@@ -1,7 +1,10 @@
 #ifndef ENCRYPTION_H
 #define ENCRYPTION_H
 
+#include <iostream>
+#include <fstream>
 #include <string>
+
 
 // 加密和解密函数声明
 void encryptFile(const std::string& filename, const std::string& key);

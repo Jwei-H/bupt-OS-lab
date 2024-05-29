@@ -6,11 +6,12 @@
 #include "openmode.h"
 #include "rename.h"
 #include "encryption.h"
+using namespace std;
 int main() 
 {
     cout << "**********文件系统调用程序*********" << endl;
     int choice;
-    std::string filename, key;
+    string myfilename, key;
     while (true) 
     {
         cout << "\n请选择您的选项\n";
@@ -24,11 +25,11 @@ int main()
         cout << "8. 重命名文件\n";
         cout << "9. 关闭文件\n";
         cout << "10. 退出程序\n";
-        cout<<"11.加密文件";
+        cout<<"11.加密文件\n";
         cout<<"12.解密文件";
         cin >> choice;
         switch (choice) 
-        {
+        {   
             case 1:
                 CreateOpenFileWithMode();
                 break;
@@ -55,27 +56,30 @@ int main()
             case 9:
                 exit();
                 break;
+            
             case 10:
                 if (opened) 
                 {
                     close(fd);
                 }
                 cout << "程序已退出" << endl;
-                return 0;
+                return 0;  
             case 11:
                 std::cout << "请输入要加密的文件名：";
-                std::cin >> filename;
+                std::cin >> myfilename;
                 std::cout << "请输入加密密钥：";
                 std::cin >> key;
-                encryptFile(filename, key);
+                encryptFile(myfilename, key);
                 break;
+                
             case 12:
                 std::cout << "请输入要解密的文件名：";
-                std::cin >> filename;
+                std::cin >> myfilename;
                 std::cout << "请输入解密密钥：";
                 std::cin >> key;
-                decryptFile(filename, key);
+                decryptFile(myfilename, key);
                 break;
+            
             default:
                 cout << "输入错误！" << endl;
                 break;

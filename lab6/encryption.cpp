@@ -1,6 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <string>
+
 #include "encryption.h"
 
 void processFile(const std::string& filename, const std::string& key) {

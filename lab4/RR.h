@@ -4,14 +4,7 @@
 #include <iostream>
 #include <iomanip>
 // 进程结构体
-struct myProcess {
-    int pid;  // 进程ID
-    int burst_time;  // 执行时间
-    int waiting_time;  // 等待时间
-    int turnaround_time;  // 周转时间
-    int remaining_time;  // 剩余执行时间
-    int completed;  // 标记进程是否已完成
-};
+
 // 轮转调度算法
 void rr(myProcess processes[], int n, int quantum) {
     int total_waiting_time = 0;
