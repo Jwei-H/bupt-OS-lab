@@ -10,6 +10,7 @@ int main()
 {
     cout << "**********文件系统调用程序*********" << endl;
     int choice;
+    std::string filename, key;
     while (true) 
     {
         cout << "\n请选择您的选项\n";
