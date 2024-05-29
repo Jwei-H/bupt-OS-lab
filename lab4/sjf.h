@@ -6,7 +6,7 @@
 #include <iomanip>
 
 // 进程结构体
-struct Process {
+struct myProcess {
     int pid;  // 进程ID
     int burst_time;  // 执行时间
     int waiting_time;  // 等待时间
@@ -16,7 +16,7 @@ struct Process {
 };
 
 // 短作业优先调度算法
-void sjf(Process processes[], int n) {
+void sjf(myProcess processes[], int n) {
     int total_waiting_time = 0;
     int total_turnaround_time = 0;
 
