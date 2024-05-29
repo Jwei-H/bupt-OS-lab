@@ -59,7 +59,7 @@ void test_sjf(){
     std::cin >> n;
 
     // 进程数组
-    Process processes[n];
+    myProcess processes[n];
 
     // 输入每个进程的执行时间
     for (int i = 0; i < n; i++) {
@@ -79,7 +79,7 @@ void test_RR() {
     std::cin >> n;
 
     // 进程数组
-    Process processes[n];
+    myProcess processes[n];
 
     // 输入每个进程的执行时间
     for (int i = 0; i < n; i++) {
