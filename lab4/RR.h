@@ -4,7 +4,7 @@
 #include <iostream>
 #include <iomanip>
 // 进程结构体
-struct Process {
+struct myProcess {
     int pid;  // 进程ID
     int burst_time;  // 执行时间
     int waiting_time;  // 等待时间
@@ -13,7 +13,7 @@ struct Process {
     int completed;  // 标记进程是否已完成
 };
 // 轮转调度算法
-void rr(Process processes[], int n, int quantum) {
+void rr(myProcess processes[], int n, int quantum) {
     int total_waiting_time = 0;
     int total_turnaround_time = 0;
     int time = 0;
